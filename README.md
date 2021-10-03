@@ -1,3 +1,9 @@
+## Project Name & Pitch
+
+The Artsy Store
+
+Live Demo: https://artsystore.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
