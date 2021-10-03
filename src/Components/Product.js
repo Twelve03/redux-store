@@ -1,16 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useParams } from "react-router";
+import axios from "axios";
 
 const Product = () => {
-  const products = useSelector((state) => state.allProducts.products);
-  return (
-    <div className="p-2 w-64 border-2">
-      <img src="" alt="" />
-      <h1>Product's title</h1>
-      <p>Product's description</p>
-      <p>Product's price</p>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Product;

@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/actions/productAction";
 import axios from "axios";
-import Product from "./Product";
+import ProductCard from "./ProductCard";
 
 const ProductsList = () => {
-  const products = useSelector((state) => state);
+  const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
   const fetchProducts = async () => {
@@ -21,11 +21,14 @@ const ProductsList = () => {
     fetchProducts();
   }, []);
 
-  console.log(products);
   return (
     <div>
       <h1>Products List</h1>
-      <Product />
+      <div className="p-2 w-full flex flex-wrap items-center justify-center">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
 };
