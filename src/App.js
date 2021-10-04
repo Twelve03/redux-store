@@ -14,8 +14,6 @@ function App() {
           <Route path="/products/:id" exact component={Product} />
         </Switch>
       </Router>
-
-      <h1>Hello world!</h1>
     </div>
   );
 }

@@ -10,7 +10,7 @@ const ProductsList = () => {
 
   const fetchProducts = async () => {
     const response = await axios
-      .get("https://fakestoreapi.com/products")
+      .get("https://615b72374a360f0017a81635.mockapi.io/paintings")
       .catch((err) => {
         console.log("Error", err);
       });
@@ -22,9 +22,9 @@ const ProductsList = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Products List</h1>
-      <div className="p-2 w-full flex flex-wrap items-center justify-center">
+    <div className="pt-12 flex flex-col items-center">
+      <h1 className="mt-32 text-4xl text-center">My Art Collection. Limited.</h1>
+      <div className="mt-12 p-2 w-full flex flex-wrap items-center justify-center">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

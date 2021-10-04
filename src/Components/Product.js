@@ -16,7 +16,7 @@ const Product = () => {
 
   const fetchProduct = async () => {
     const response = await axios
-      .get(`https://fakestoreapi.com/products/${id}`)
+      .get(`https://615b72374a360f0017a81635.mockapi.io/paintings/${id}`)
       .catch((err) => console.log("Error", err));
 
     dispatch(selectedProduct(response.data));
@@ -28,18 +28,12 @@ const Product = () => {
   }, [id]);
 
   return (
-    <>
-      {Object.keys(product).length === "0" ? (
-        <div>Loading...</div>
-      ) : (
-        <div>
-          <img src={image} alt="" />
-          <h1>{title}</h1>
-          <p>{description}</p>
-          <p>{price}</p>
-        </div>
-      )}
-    </>
+    <div>
+      <img src={image} alt="" />
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <p>{price}</p>
+    </div>
   );
 };
 

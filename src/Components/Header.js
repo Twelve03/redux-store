@@ -1,22 +1,17 @@
 const Header = () => {
   return (
     <header
-      className="
-    fixed
-    z-50
-    w-full
-    flex
-    justify-between
-    items-center
-    h-12
-    border-2
-    "
+      className="fixed px-7 h-16 w-full z-50 flex justify-between items-center 
+                 bg-white"
     >
-      <button>menu</button>
-      <nav>
-        <ul></ul>
+      <div className="md:hidden">menu</div>
+      <nav className="flex border-2 w-48 justify-around hidden md:block">
+        <a href="/">Home</a>
+        <a href="/">About</a>
+        <a href="/">Contatcs</a>
       </nav>
-      <div>Logo Here</div>
+      <div>The Artist</div>
+      <div>Cart</div>
     </header>
   );
 };
