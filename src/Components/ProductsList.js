@@ -22,7 +22,7 @@ const ProductsList = () => {
   }, []);
 
   return (
-    <div className="pt-12 flex flex-col items-center">
+    <div className="p-2 pt-12 flex flex-col items-center">
       <h1 className="mt-32 text-4xl text-center">My Art Collection. Limited.</h1>
       <div className="mt-12 p-2 w-full flex flex-wrap items-center justify-center">
         {products.map((product) => (
