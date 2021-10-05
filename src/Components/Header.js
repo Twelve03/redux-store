@@ -32,7 +32,10 @@ const Header = () => {
 
       <div className="md:-ml-40">The Artist</div>
 
-      <div className="mr-7">Cart</div>
+      <div className="p-1 mr-6 flex border-2 rounded-full">
+        <p>Cart</p>
+        <p className="ml-1">0</p>
+      </div>
     </header>
   );
 };

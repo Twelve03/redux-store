@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import {
   selectedProduct,
   removeSelectedProduct,
+  addToCart,
 } from "../redux/actions/productAction";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -33,6 +34,12 @@ const Product = () => {
       <h1>{title}</h1>
       <p>{description}</p>
       <p>{price}</p>
+      <button
+        onClick={() => dispatch(addToCart(product))}
+        className="p-1 border-2 w-24"
+      >
+        Add to Cart
+      </button>
     </div>
   );
 };
