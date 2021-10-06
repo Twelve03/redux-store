@@ -1,7 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const productsInCart = useSelector((state) => state.cart.cart);
+  const [cartCount, setCartCount] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    let count = 0;
+    productsInCart.forEach((item) => {
+      count += item.qty;
+    });
+
+    setCartCount(count);
+  }, [productsInCart, cartCount]);
 
   return (
     <header
@@ -10,7 +23,7 @@ const Header = () => {
     >
       {/* Mobile Nav */}
       <div onClick={() => setShowMenu(!showMenu)} className="ml-7 md:hidden">
-        menu
+        <i className="fas fa-ellipsis-h text-xl"></i>
       </div>
       {showMenu && (
         <nav
@@ -30,12 +43,18 @@ const Header = () => {
         <a href="/">Contact</a>
       </nav>
 
-      <div className="md:-ml-40">The Artist</div>
+      <Link to="/">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          The Artist
+        </div>
+      </Link>
 
-      <div className="p-1 mr-6 flex border-2 rounded-full">
-        <p>Cart</p>
-        <p className="ml-1">0</p>
-      </div>
+      <Link to="/cart">
+        <div className="p-1 mr-6 flex items-center rounded-full">
+          <i className="fas fa-shopping-cart"></i>
+          <p className="ml-1">{cartCount}</p>
+        </div>
+      </Link>
     </header>
   );
 };

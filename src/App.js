@@ -13,7 +13,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={ProductsList} />
           <Route path="/products/:id" exact component={Product} />
-          <Route path="/products/cart" exact component={Cart} />
+          <Route path="/cart" exact component={Cart} />
         </Switch>
       </Router>
     </div>
