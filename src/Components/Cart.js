@@ -21,23 +21,37 @@ const Cart = () => {
   }, [cartItems, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
   return (
-    <div className="p-2 pt-20 flex flex-col items-center">
-      <h1>Shopping Cart</h1>
-      <div className="flex flex-col items-center">
+    <div className="p-2 pt-20 pb-8 flex flex-col items-center">
+      <h1 className="text-2xl">Shopping Cart</h1>
+      {/* Cart items array */}
+      <div className="mt-6 flex flex-col items-center">
         {cartItems.map((item) => (
           <CartItem key={item.id} itemData={item} />
         ))}
       </div>
-      <div className="h-48 w-48 border-2">
-        <p>Your Summary</p>
-        <div className="flex flex-col">
-          <p>Total : {totalItems} items</p>
-          <p>${totalPrice}</p>
+
+      {/* Show checkout summary if there are cart items */}
+      {cartItems.length > 0 ? (
+        <div className="mt-6 flex flex-col">
+          <div className="mt-4 w-64 flex items-center justify-between">
+            <p className="text-lg font-medium text-gray-600">
+              Total Price ({totalItems}) items
+            </p>
+            <p className="text-xl font-semibold text-green-500">
+              ${totalPrice}
+            </p>
+          </div>
+          <button className="p-2 mt-6 self-center bg-black text-white rounded-sm w-4/5">
+            Proceed to Checkout
+            <i className="ml-4 fas fa-long-arrow-alt-right"></i>
+          </button>
         </div>
-        <button className="p-2 bg-gray-200 rounded-full">
-          Proceed to Checkout
-        </button>
-      </div>
+      ) : (
+        <div className="mt-6 flex flex-col items-center">
+          <i className="far fa-sad-tear text-6xl"></i>
+          <p className="mt-4 text-xl">You havent picked any items yet!</p>
+        </div>
+      )}
     </div>
   );
 };

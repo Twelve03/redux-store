@@ -29,14 +29,14 @@ const Product = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="p-4">
       <img src={image} alt="" />
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <p>{price}</p>
+      <h1 className="mt-4 text-xl font-semibold">{title}</h1>
+      <p className="mt-1 leading-7 text-lg text-gray-500">{description}</p>
+      <p className="mt-2 text-xl font-medium">${price}</p>
       <button
         onClick={() => dispatch(addToCart(product))}
-        className="p-1 border-2 w-24"
+        className="py-2 px-4 mt-6 bg-black font-semibold text-white"
       >
         Add to Cart
       </button>

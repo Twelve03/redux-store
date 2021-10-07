@@ -30,17 +30,17 @@ const Header = () => {
           className="fixed top-16 h-full w-full flex flex-col justify-center 
                      items-center text-2xl bg-white"
         >
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contatcs</a>
+          <Link to="/">Home</Link>
+          <Link to="/">About</Link>
+          <Link to="/">Contact</Link>
         </nav>
       )}
 
       {/* Bigger screens' Nav*/}
       <nav className="ml-7 w-48 items-center justify-around hidden md:flex">
-        <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
+        <Link to="/">Home</Link>
+        <Link to="/">About</Link>
+        <Link to="/">Contact</Link>
       </nav>
 
       <Link to="/">
