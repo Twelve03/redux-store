@@ -20,6 +20,7 @@ const Header = () => {
     <header
       className="fixed h-16 w-full z-50 flex justify-between items-center 
                  bg-white"
+      style={{ maxWidth: "1300px" }}
     >
       {/* Mobile Nav */}
       <div onClick={() => setShowMenu(!showMenu)} className="ml-7 md:hidden">
@@ -31,9 +32,11 @@ const Header = () => {
                      items-center text-2xl bg-white"
           onClick={() => setShowMenu(false)}
         >
-          <Link to="/">Home</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Contact</Link>
+          <div className="-mt-32 h-32 flex flex-col justify-around text-center">
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/">Contact</Link>
+          </div>
         </nav>
       )}
 
@@ -48,13 +51,20 @@ const Header = () => {
       </nav>
 
       <Link to="/">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 
+                     -translate-y-1/2"
+          onClick={() => showMenu && setShowMenu(false)}
+        >
           The Artist
         </div>
       </Link>
 
       <Link to="/cart">
-        <div className="p-1 mr-6 flex items-center rounded-full">
+        <div
+          className="p-1 mr-6 flex items-center rounded-full"
+          onClick={() => showMenu && setShowMenu(false)}
+        >
           <i className="fas fa-shopping-cart"></i>
           <p className="ml-1">{cartCount}</p>
         </div>

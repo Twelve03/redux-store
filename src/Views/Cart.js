@@ -24,7 +24,10 @@ const Cart = () => {
     <div className="p-2 pt-20 pb-8 flex flex-col items-center">
       <h1 className="text-2xl">Shopping Cart</h1>
       {/* Cart items array */}
-      <div className="mt-6 flex flex-col items-center">
+      <div
+        className="mt-6 flex flex-col items-center max-width md:flex-row 
+                      md:flex-wrap md:justify-center"
+      >
         {cartItems.map((item) => (
           <CartItem key={item.id} itemData={item} />
         ))}
@@ -49,7 +52,7 @@ const Cart = () => {
       ) : (
         <div className="mt-6 flex flex-col items-center">
           <i className="far fa-sad-tear text-6xl"></i>
-          <p className="mt-4 text-xl">You havent picked any items yet!</p>
+          <p className="mt-4 text-xl">You haven't picked any items yet!</p>
         </div>
       )}
     </div>

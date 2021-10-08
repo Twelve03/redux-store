@@ -8,21 +8,21 @@ const ProductsList = () => {
   const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
-  const fetchProducts = async () => {
-    const response = await axios
-      .get("https://615b72374a360f0017a81635.mockapi.io/paintings")
-      .catch((err) => {
-        console.log("Error", err);
-      });
-    dispatch(setProducts(response.data));
-  };
-
   useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await axios
+        .get("https://615b72374a360f0017a81635.mockapi.io/paintings")
+        .catch((err) => {
+          console.log("Error", err);
+        });
+      dispatch(setProducts(response.data));
+    };
+
     fetchProducts();
-  }, []);
+  }, [dispatch]);
 
   return (
-    <div className="p-2 pt-12 flex flex-col items-center">
+    <div className="p-2 pt-12 flex flex-col items-center max-width">
       <h1 className="mt-32 text-4xl text-center">
         My Art Collection. Limited.
       </h1>

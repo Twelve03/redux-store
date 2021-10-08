@@ -4,9 +4,9 @@ import Contact from "../Components/Contact";
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <ProductsList />
-      <Contact/>
+        <Contact />
     </div>
   );
 };
