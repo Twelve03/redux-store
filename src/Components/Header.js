@@ -29,6 +29,7 @@ const Header = () => {
         <nav
           className="fixed top-16 h-full w-full flex flex-col justify-center 
                      items-center text-2xl bg-white"
+          onClick={() => setShowMenu(false)}
         >
           <Link to="/">Home</Link>
           <Link to="/">About</Link>
@@ -37,9 +38,12 @@ const Header = () => {
       )}
 
       {/* Bigger screens' Nav*/}
-      <nav className="ml-7 w-48 items-center justify-around hidden md:flex">
+      <nav
+        className="ml-7 w-48 items-center justify-around hidden md:flex"
+        onClick={() => setShowMenu(false)}
+      >
         <Link to="/">Home</Link>
-        <Link to="/">About</Link>
+        <Link to="/about">About</Link>
         <Link to="/">Contact</Link>
       </nav>
 
