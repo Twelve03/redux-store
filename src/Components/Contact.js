@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div>
+    <div id="contact">
       <div className="p-8 items-center max-width md:flex lg:mt-20">
         <img
           src="https://i.pinimg.com/originals/da/6a/87/da6a87d05b220e44e2cd42ca81fef22b.jpg"

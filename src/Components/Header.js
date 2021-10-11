@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const productsInCart = useSelector((state) => state.cart.cart);
@@ -18,8 +19,8 @@ const Header = () => {
 
   return (
     <header
-      className="fixed h-16 w-full z-50 flex justify-between items-center 
-                 bg-white"
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 h-16 w-full 
+                 z-50 flex justify-between items-center bg-white"
       style={{ maxWidth: "1300px" }}
     >
       {/* Mobile Nav */}
@@ -28,14 +29,14 @@ const Header = () => {
       </div>
       {showMenu && (
         <nav
-          className="fixed top-16 h-full w-full flex flex-col justify-center 
+          className="fixed top-16 h-screen w-full flex flex-col justify-center 
                      items-center text-2xl bg-white"
           onClick={() => setShowMenu(false)}
         >
           <div className="-mt-32 h-32 flex flex-col justify-around text-center">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
-            <Link to="/">Contact</Link>
+            <HashLink to="/#contact">Contact</HashLink>
           </div>
         </nav>
       )}
@@ -47,7 +48,7 @@ const Header = () => {
       >
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/">Contact</Link>
+        <HashLink to="/#contact">Contact</HashLink>
       </nav>
 
       <Link to="/">

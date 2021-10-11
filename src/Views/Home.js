@@ -6,7 +6,10 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center">
       <ProductsList />
-        <Contact />
+      <Contact />
+      <footer className="h-16 p-4">
+        <p className="ml-4 text-xl text-gray-800">©The Artist</p>
+      </footer>
     </div>
   );
 };

@@ -5,11 +5,11 @@ import Home from "./Views/Home";
 import About from "./Views/About";
 import Product from "./Components/Product";
 import Cart from "./Views/Cart";
-import Footer from "./Components/Footer";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
-    <div>
+    <div className="relative">
       <Router>
         <Header />
         <Switch>
@@ -18,7 +18,6 @@ function App() {
           <Route path="/products/:id" exact component={Product} />
           <Route path="/cart" exact component={Cart} />
         </Switch>
-        <Footer />
       </Router>
     </div>
   );

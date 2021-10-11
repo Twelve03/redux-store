@@ -33,7 +33,7 @@ const Product = () => {
       <img
         src={image}
         alt={title}
-        className="md:mt-10 md:w-3/5 lg:w-2/5 xl:w-1/4"
+        className="mt-12 md:mt-10 md:w-3/5 lg:w-2/5 xl:w-1/4"
       />
       <h1 className="mt-4 text-xl font-semibold">{title}</h1>
       <p
